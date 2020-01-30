@@ -1,0 +1,17 @@
+{
+  "name": "postman_cli_html_report",
+  "version": "1.0.0",
+  "description": "install newman and html extra",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "newman-reporter-htmlextra": "^1.9.2"
+  },
+  "devDependencies": {
+    "newman": "^4.5.7"
+  }
+}
