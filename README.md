@@ -22,3 +22,5 @@ To prevent commiting reports and npm_modules to git
  6. **Start.bat**
 A batch file containing the command to execute the postman scripts
 
+ 6. **Sample Report**
+This folder has the newman report for the final run before submitting this assignment officially 
