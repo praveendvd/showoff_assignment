@@ -1,4 +1,2 @@
-.\node_modules\.bin\newman run "Rails React App.postman_collection.json" -e "Rails React App Production.postman_environment.json" --folder Data_Driven_User_Create -d data.csv  -r htmlextra,cli --reporter-htmlextra-logs
-
-
-.\node_modules\.bin\newman run "Rails React App.postman_collection.json" -e "Rails React App Production.postman_environment.json" --folder Data_Driven_User_Create -d data.csv  -r htmlextra,cli --reporter-htmlextra-logs
+call .\node_modules\.bin\newman run "Rails React App.postman_collection.json" -e "Rails React App Production.postman_environment.json" --folder Data_Driven_User_Create -d data_user_creation.csv  -r htmlextra,cli --reporter-htmlextra-logs --reporter-htmlextra-export ./newman/user_creation.html	
+call .\node_modules\.bin\newman run "Rails React App.postman_collection.json" -e "Rails React App Production.postman_environment.json" --folder Data_Driven_Token_Create -d data_token_creation.csv  -r htmlextra,cli --reporter-htmlextra-logs --reporter-htmlextra-export ./newman/token_creation.html

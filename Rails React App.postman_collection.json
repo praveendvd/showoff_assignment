@@ -620,7 +620,7 @@
 										"id": "6e893f38-706d-4bb4-a7b4-6466e4ad6ddd",
 										"exec": [
 											"let jsonData = JSON.parse(responseBody);",
-											"let jsonSchema_success=JSON.parse(pm.environment.get(\"json_schema_success\"));",
+											"let jsonSchema_success=JSON.parse(pm.environment.get(\"json_schema_success_user_creation\"));",
 											"let jsonSchem_failed=JSON.parse(pm.environment.get(\"json_schema_failed\"));",
 											"let status;",
 											"",
@@ -1668,59 +1668,108 @@
 			"name": "Authentication",
 			"item": [
 				{
-					"name": "Create",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "cb92defa-e610-4e08-9a92-a5764a31ae67",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"token\", jsonData.data.token.access_token);",
-									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.data.token.refresh_token);",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"grant_type\": \"password\",\n    \"client_id\": \"{{client_id}}\",\n    \"client_secret\": \"{{client_secret}}\",\n    \"username\": \"michael@showoff.ie\",\n    \"password\": \"password\"\n}"
-						},
-						"url": {
-							"raw": "{{api_url}}/oauth/token",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"oauth",
-								"token"
-							]
-						}
-					},
-					"response": [
+					"name": "Data_Driven_Token_Create",
+					"item": [
 						{
 							"name": "Create",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cb92defa-e610-4e08-9a92-a5764a31ae67",
+										"exec": [
+											"let jsonData = JSON.parse(responseBody);",
+											"let jsonSchema_success=JSON.parse(pm.environment.get(\"json_schema_success_token_creation\"));",
+											"let jsonSchem_failed=JSON.parse(pm.environment.get(\"json_schema_failed\"));",
+											"let status='';",
+											"",
+											"if(pm.response.code==200){",
+											"",
+											"postman.setEnvironmentVariable(\"token\", jsonData.data.token.access_token);",
+											"postman.setEnvironmentVariable(\"refresh_token\", jsonData.data.token.refresh_token);",
+											"",
+											"}",
+											"",
+											"if((pm.iterationData.get(\"message\")).includes('Success')){",
+											"",
+											"pm.test(\"Status code is 200  for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Schema is valid  for \"+pm.iterationData.get('test_name'), function() {",
+											"  status=tv4.validate(jsonData,jsonSchema_success, true, true);",
+											"",
+											"  if(!status){",
+											"      console.log(\"Schema error message is:\"+tv4.error.message+\" Error dataPath is:\"+tv4.error.dataPath+\" Error schemaPath is:\"+tv4.error.schemaPath);",
+											"  }",
+											"",
+											"  pm.expect(status).to.be.true;",
+											"});    ",
+											"",
+											"}else{    ",
+											"    let array=[\"invalid_client_id\",",
+											"\"invalid_client_secret\",",
+											"\"blank_client_id\",",
+											"\"blank_client_secret\",",
+											"];",
+											"",
+											"    ",
+											"    if(array.includes(pm.iterationData.get(\"test_name\"))){",
+											"        ",
+											"        pm.test(\"Status code is 401 for \"+pm.iterationData.get('test_name'), function () {",
+											"             pm.response.to.have.status(401);",
+											"        });",
+											"        ",
+											"    }else{",
+											"        ",
+											"        pm.test(\"Status code is 422  for \"+pm.iterationData.get('test_name'), function () {",
+											"            pm.response.to.have.status(422);",
+											"        });",
+											"        ",
+											"        ",
+											"    }",
+											"",
+											"pm.test(\"Schema is valid  for \"+pm.iterationData.get('test_name'), function() {",
+											"  status=tv4.validate(jsonData,jsonSchem_failed, true, true);",
+											"",
+											"  if(!status){",
+											"      console.log(\"Schema error message is:\"+tv4.error.message+\" Error dataPath is:\"+tv4.error.dataPath+\" Error schemaPath is:\"+tv4.error.schemaPath);",
+											"  }",
+											"",
+											"  pm.expect(status).to.be.true;",
+											"});    ",
+											"        ",
+											"}",
+											"    ",
+											"",
+											"pm.test(\"Check the message for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.expect(jsonData.message).to.eql(pm.iterationData.get('message'));",
+											"});",
+											"    ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json"
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"grant_type\": \"password\",\n    \"client_id\": \"{{client_id}}\",\n    \"client_secret\": \"{{client_secret}}\",\n    \"username\": \"michael@showoff.ie\",\n    \"password\": \"password\"\n}"
+									"raw": "{\n    \"grant_type\": \"{{type}}\",\n    \"client_id\": \"{{client_id}}\",\n    \"client_secret\": \"{{client_secret}}\",\n    \"username\": \"{{user_email}}\",\n    \"password\": \"{{password}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "{{api_url}}/oauth/token",
@@ -1733,75 +1782,105 @@
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:05:26 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"60aecbb054f7f34d36fb73371b5d337f\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "582dd38e-6672-4cb9-9b3e-a71286b0ae0e"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.265595"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
+									"name": "Create",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"grant_type\": \"password\",\n    \"client_id\": \"{{client_id}}\",\n    \"client_secret\": \"{{client_secret}}\",\n    \"username\": \"michael@showoff.ie\",\n    \"password\": \"password\"\n}"
+										},
+										"url": {
+											"raw": "{{api_url}}/oauth/token",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"oauth",
+												"token"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Feb 2019 12:05:26 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding, Origin"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Etag",
+											"value": "W/\"60aecbb054f7f34d36fb73371b5d337f\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "582dd38e-6672-4cb9-9b3e-a71286b0ae0e"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.265595"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"token\": {\n            \"access_token\": \"479c8407d69e5bbc5079936e13314b50971d7028a11994a3be83c8f89027835f\",\n            \"token_type\": \"Bearer\",\n            \"expires_in\": 2592000,\n            \"refresh_token\": \"6399bbcf509079f7565a30d06de245e5414e554d74328181f7fe4313bb256c29\",\n            \"scope\": \"basic\",\n            \"created_at\": 1549368326\n        }\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"token\": {\n            \"access_token\": \"479c8407d69e5bbc5079936e13314b50971d7028a11994a3be83c8f89027835f\",\n            \"token_type\": \"Bearer\",\n            \"expires_in\": 2592000,\n            \"refresh_token\": \"6399bbcf509079f7565a30d06de245e5414e554d74328181f7fe4313bb256c29\",\n            \"scope\": \"basic\",\n            \"created_at\": 1549368326\n        }\n    }\n}"
+							]
 						}
-					]
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				},
 				{
 					"name": "Revoke",
