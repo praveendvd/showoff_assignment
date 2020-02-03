@@ -1,635 +1,29 @@
 {
 	"info": {
-		"_postman_id": "f9fd0d74-637e-42ba-b489-2c93e0874638",
+		"_postman_id": "ec60b551-3957-41ac-b088-8eca66be489e",
 		"name": "Rails React App",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Users",
+			"name": "Tests",
 			"item": [
-				{
-					"name": "Widgets",
-					"item": [
-						{
-							"name": "Index (Me)",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "510e66f1-332c-4af0-84c9-a6bba26649a4",
-										"exec": [
-											"var jsonData = JSON.parse(responseBody);",
-											"postman.setEnvironmentVariable(\"widget_id\", jsonData.data.widgets[0].id);",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{api_url}}/api/v1/users/me/widgets?client_id={{client_id}}&client_secret={{client_secret}}",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"me",
-										"widgets"
-									],
-									"query": [
-										{
-											"key": "client_id",
-											"value": "{{client_id}}"
-										},
-										{
-											"key": "client_secret",
-											"value": "{{client_secret}}"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Index (Me)",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Bearer {{token}}",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "{{api_url}}/api/v1/users/me/widgets?client_id={{client_id}}&client_secret={{client_secret}}",
-											"host": [
-												"{{api_url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"users",
-												"me",
-												"widgets"
-											],
-											"query": [
-												{
-													"key": "client_id",
-													"value": "{{client_id}}"
-												},
-												{
-													"key": "client_secret",
-													"value": "{{client_secret}}"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "Cowboy"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 05 Feb 2019 12:06:54 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Xss-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding, Origin"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										},
-										{
-											"key": "Etag",
-											"value": "W/\"cf7b97b1cebee4f84a71644c97ecbfda\""
-										},
-										{
-											"key": "Cache-Control",
-											"value": "max-age=0, private, must-revalidate"
-										},
-										{
-											"key": "X-Request-Id",
-											"value": "3716f6e9-7584-47c5-bb0d-56ddc3816119"
-										},
-										{
-											"key": "X-Runtime",
-											"value": "0.059959"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 vegur"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widgets\": [\n            {\n                \"id\": 3,\n                \"name\": \"A Hidden Widget\",\n                \"description\": \"Widget 1\",\n                \"kind\": \"hidden\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"A User\",\n                    \"images\": {\n                        \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/small/961-200.png?1549366177\",\n                        \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/medium/961-200.png?1549366177\",\n                        \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/large/961-200.png?1549366177\",\n                        \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/original/961-200.png?1549366177\"\n                    },\n                    \"first_name\": \"A\",\n                    \"last_name\": \"User\",\n                    \"date_of_birth\": null,\n                    \"email\": \"michael@showoff.ie\",\n                    \"active\": true\n                },\n                \"owner\": true\n            },\n            {\n                \"id\": 4,\n                \"name\": \"A Visible Widget\",\n                \"description\": \"Widget 1\",\n                \"kind\": \"visible\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"A User\",\n                    \"images\": {\n                        \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/small/961-200.png?1549366177\",\n                        \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/medium/961-200.png?1549366177\",\n                        \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/large/961-200.png?1549366177\",\n                        \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/original/961-200.png?1549366177\"\n                    },\n                    \"first_name\": \"A\",\n                    \"last_name\": \"User\",\n                    \"date_of_birth\": null,\n                    \"email\": \"michael@showoff.ie\",\n                    \"active\": true\n                },\n                \"owner\": true\n            }\n        ]\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Index (Me) w/Term",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{token}}"
-									}
-								],
-								"url": {
-									"raw": "{{api_url}}/api/v1/users/me/widgets?client_id={{client_id}}&client_secret={{client_secret}}&term=visible",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"me",
-										"widgets"
-									],
-									"query": [
-										{
-											"key": "client_id",
-											"value": "{{client_id}}"
-										},
-										{
-											"key": "client_secret",
-											"value": "{{client_secret}}"
-										},
-										{
-											"key": "term",
-											"value": "visible"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Index (Me) w/Term",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{token}}"
-											}
-										],
-										"url": {
-											"raw": "{{api_url}}/api/v1/users/me/widgets?client_id={{client_id}}&client_secret={{client_secret}}&term=visible",
-											"host": [
-												"{{api_url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"users",
-												"me",
-												"widgets"
-											],
-											"query": [
-												{
-													"key": "client_id",
-													"value": "{{client_id}}"
-												},
-												{
-													"key": "client_secret",
-													"value": "{{client_secret}}"
-												},
-												{
-													"key": "term",
-													"value": "visible"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "Cowboy"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 05 Feb 2019 12:07:34 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Xss-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding, Origin"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										},
-										{
-											"key": "Etag",
-											"value": "W/\"764e75280d00eaa840ae30ba9eceacc1\""
-										},
-										{
-											"key": "Cache-Control",
-											"value": "max-age=0, private, must-revalidate"
-										},
-										{
-											"key": "X-Request-Id",
-											"value": "117b13b9-2389-4303-b08a-1f67a018cab5"
-										},
-										{
-											"key": "X-Runtime",
-											"value": "0.160338"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 vegur"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widgets\": [\n            {\n                \"id\": 4,\n                \"name\": \"A Visible Widget\",\n                \"description\": \"Widget 1\",\n                \"kind\": \"visible\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"A User\",\n                    \"images\": {\n                        \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/small/961-200.png?1549366177\",\n                        \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/medium/961-200.png?1549366177\",\n                        \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/large/961-200.png?1549366177\",\n                        \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/original/961-200.png?1549366177\"\n                    },\n                    \"first_name\": \"A\",\n                    \"last_name\": \"User\",\n                    \"date_of_birth\": null,\n                    \"email\": \"michael@showoff.ie\",\n                    \"active\": true\n                },\n                \"owner\": true\n            }\n        ]\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Index (ID)",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{token}}"
-									}
-								],
-								"url": {
-									"raw": "{{api_url}}/api/v1/users/1/widgets?client_id={{client_id}}&client_secret={{client_secret}}",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"1",
-										"widgets"
-									],
-									"query": [
-										{
-											"key": "client_id",
-											"value": "{{client_id}}"
-										},
-										{
-											"key": "client_secret",
-											"value": "{{client_secret}}"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Index (ID)",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{token}}"
-											}
-										],
-										"url": {
-											"raw": "{{api_url}}/api/v1/users/1/widgets?client_id={{client_id}}&client_secret={{client_secret}}",
-											"host": [
-												"{{api_url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"users",
-												"1",
-												"widgets"
-											],
-											"query": [
-												{
-													"key": "client_id",
-													"value": "{{client_id}}"
-												},
-												{
-													"key": "client_secret",
-													"value": "{{client_secret}}"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "Cowboy"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 05 Feb 2019 12:07:50 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Xss-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding, Origin"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										},
-										{
-											"key": "Etag",
-											"value": "W/\"d782d1bf5680006db3ffc27ba70d2d00\""
-										},
-										{
-											"key": "Cache-Control",
-											"value": "max-age=0, private, must-revalidate"
-										},
-										{
-											"key": "X-Request-Id",
-											"value": "b5ce79ec-b9df-4b92-8659-e64f10f7a579"
-										},
-										{
-											"key": "X-Runtime",
-											"value": "0.064309"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 vegur"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widgets\": [\n            {\n                \"id\": 3,\n                \"name\": \"A Hidden Widget\",\n                \"description\": \"Widget 1\",\n                \"kind\": \"hidden\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"A User\",\n                    \"images\": {\n                        \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/small/961-200.png?1549366177\",\n                        \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/medium/961-200.png?1549366177\",\n                        \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/large/961-200.png?1549366177\",\n                        \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/original/961-200.png?1549366177\"\n                    },\n                    \"first_name\": \"A\",\n                    \"last_name\": \"User\",\n                    \"date_of_birth\": null,\n                    \"email\": \"michael@showoff.ie\",\n                    \"active\": true\n                },\n                \"owner\": true\n            },\n            {\n                \"id\": 4,\n                \"name\": \"A Visible Widget\",\n                \"description\": \"Widget 1\",\n                \"kind\": \"visible\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"A User\",\n                    \"images\": {\n                        \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/small/961-200.png?1549366177\",\n                        \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/medium/961-200.png?1549366177\",\n                        \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/large/961-200.png?1549366177\",\n                        \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/original/961-200.png?1549366177\"\n                    },\n                    \"first_name\": \"A\",\n                    \"last_name\": \"User\",\n                    \"date_of_birth\": null,\n                    \"email\": \"michael@showoff.ie\",\n                    \"active\": true\n                },\n                \"owner\": true\n            }\n        ]\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Index (ID) w/Term",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{token}}"
-									}
-								],
-								"url": {
-									"raw": "{{api_url}}/api/v1/users/1/widgets?client_id={{client_id}}&client_secret={{client_secret}}&term=visible",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"1",
-										"widgets"
-									],
-									"query": [
-										{
-											"key": "client_id",
-											"value": "{{client_id}}"
-										},
-										{
-											"key": "client_secret",
-											"value": "{{client_secret}}"
-										},
-										{
-											"key": "term",
-											"value": "visible"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Index (ID) w/Term",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{token}}"
-											}
-										],
-										"url": {
-											"raw": "{{api_url}}/api/v1/users/1/widgets?client_id={{client_id}}&client_secret={{client_secret}}&term=visible",
-											"host": [
-												"{{api_url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"users",
-												"1",
-												"widgets"
-											],
-											"query": [
-												{
-													"key": "client_id",
-													"value": "{{client_id}}"
-												},
-												{
-													"key": "client_secret",
-													"value": "{{client_secret}}"
-												},
-												{
-													"key": "term",
-													"value": "visible"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "Cowboy"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 05 Feb 2019 12:08:23 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Xss-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding, Origin"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										},
-										{
-											"key": "Etag",
-											"value": "W/\"87d7cd9535178454ba013710d5c66559\""
-										},
-										{
-											"key": "Cache-Control",
-											"value": "max-age=0, private, must-revalidate"
-										},
-										{
-											"key": "X-Request-Id",
-											"value": "fa108f3a-3f1c-42a8-9d01-94f4caff265a"
-										},
-										{
-											"key": "X-Runtime",
-											"value": "0.036347"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 vegur"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widgets\": [\n            {\n                \"id\": 4,\n                \"name\": \"A Visible Widget\",\n                \"description\": \"Widget 1\",\n                \"kind\": \"visible\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"A User\",\n                    \"images\": {\n                        \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/small/961-200.png?1549366177\",\n                        \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/medium/961-200.png?1549366177\",\n                        \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/large/961-200.png?1549366177\",\n                        \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/original/961-200.png?1549366177\"\n                    },\n                    \"first_name\": \"A\",\n                    \"last_name\": \"User\",\n                    \"date_of_birth\": null,\n                    \"email\": \"michael@showoff.ie\",\n                    \"active\": true\n                },\n                \"owner\": true\n            }\n        ]\n    }\n}"
-								}
-							]
-						}
-					],
-					"_postman_isSubFolder": true
-				},
 				{
 					"name": "Data_Driven_User_Create",
 					"item": [
 						{
-							"name": "Create",
+							"name": "Create_User",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"id": "6e893f38-706d-4bb4-a7b4-6466e4ad6ddd",
 										"exec": [
+											"if(pm.iterationData.get(\"test_tag\")!=\"missing_field_value\"){",
 											"let jsonData = JSON.parse(responseBody);",
 											"let jsonSchema_success=JSON.parse(pm.environment.get(\"json_schema_success_user_creation\"));",
 											"let jsonSchem_failed=JSON.parse(pm.environment.get(\"json_schema_failed\"));",
 											"let status;",
-											"",
-											"if(pm.response.code==200){",
-											"",
-											"postman.setEnvironmentVariable(\"token\", jsonData.data.token.access_token);",
-											"postman.setEnvironmentVariable(\"refresh_token\", jsonData.data.token.refresh_token);",
-											"",
-											"}",
 											"",
 											"if((pm.iterationData.get(\"message\")).includes('Success')){",
 											"",
@@ -687,7 +81,13 @@
 											"    pm.expect(jsonData.message).to.eql(pm.iterationData.get('message'));",
 											"});",
 											"    ",
-											""
+											"}else{",
+											"",
+											"pm.test(\"Status code is 400 for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"    ",
+											"}"
 										],
 										"type": "text/javascript"
 									}
@@ -697,18 +97,27 @@
 									"script": {
 										"id": "8cdb724d-af49-4b24-96cd-a4f6b4ef0f31",
 										"exec": [
-											"const uuid = require('uuid')",
+											"const uuid = require('uuid');",
 											"",
 											"if(pm.iterationData.get(\"test_tag\")==='random_email'){",
-											"    let email=uuid()+'@domain.com'",
-											"    pm.variables.set(\"user_email\",email);",
+											"    let email=uuid()+'@domain.com';",
+											"    pm.variables.set(\"user_email\",'\"'+email+'\"');",
 											"}else if(pm.iterationData.get(\"test_name\")==='invalid_email_missing_domain_name'){",
 											"    let email=uuid();",
-											"    pm.variables.set(\"user_email\",email);",
+											"    pm.variables.set(\"user_email\",'\"'+email+'\"');",
 											"}else if(pm.iterationData.get(\"test_name\")==='invalid_email_missing_domain_suffix'){",
-											"    let email=uuid()+'@domain'",
-											"    pm.variables.set(\"user_email\",email);",
-											"}else",
+											"    let email=uuid()+'@domain';",
+											"    pm.variables.set(\"user_email\",'\"'+email+'\"');",
+											"}else if(pm.iterationData.get(\"test_tag\")==='missing_field_value'){",
+											"    ",
+											" if(pm.iterationData.get(\"test_name\")==='client_email_field_value_null' || pm.iterationData.get(\"test_name\")==='client_email_as_non_string') {",
+											"   pm.variables.set(\"user_email\",pm.iterationData.get(\"user_email\"));",
+											"}else{",
+											"    let email=uuid()+'@domain';",
+											"    pm.variables.set(\"user_email\",'\"'+email+'\"');",
+											"}",
+											"}",
+											"else",
 											"{",
 											"    pm.variables.set(\"user_email\",pm.iterationData.get(\"user_email\"));",
 											"}",
@@ -725,13 +134,18 @@
 									{
 										"key": "Content-Type",
 										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"type": "text",
+										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"client_secret\": \"{{client_secret}}\",\n\t\"user\": {\n\t\t\"first_name\": \"{{user_firstname}}\",\n\t\t\"last_name\": \"{{user_lastname}}\",\n\t\t\"password\": \"{{password}}\",\n\t\t\"email\": \"{{user_email}}\",\n\t\t\"image_url\": \"{{image_url}}\"\n\t}\n}"
+									"raw": "{\r\n  \"client_id\": {{client_id}},\r\n  \"client_secret\": {{client_secret}},\r\n  \"user\": {\r\n    \"first_name\": {{user_firstname}},\r\n    \"last_name\": {{user_lastname}},\r\n    \"password\": {{password}},\r\n    \"email\": {{user_email}},\r\n    \"image_url\": {{image_url}}\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "{{api_url}}/api/v1/users",
@@ -845,850 +259,25 @@
 							]
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
-				{
-					"name": "Update",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "6e893f38-706d-4bb4-a7b4-6466e4ad6ddd",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"user\":{\n        \"first_name\" : \"Another\",\n        \"last_name\" : \"User\",\n        \"date_of_birth\" : 1464083530,\n        \"image_url\": \"https://static.thenounproject.com/png/961-200.png\"\n    }\n}"
-						},
-						"url": {
-							"raw": "{{api_url}}/api/v1/users/me?=",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"me"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Update",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{token}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"user\":{\n        \"first_name\" : \"Another\",\n        \"last_name\" : \"User\",\n        \"date_of_birth\" : 1464083530,\n        \"image_url\": \"https://static.thenounproject.com/png/961-200.png\"\n    }\n}"
-								},
-								"url": {
-									"raw": "{{api_url}}/api/v1/users/me?=",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"me"
-									],
-									"query": [
-										{
-											"key": "",
-											"value": ""
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:08:54 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"4cf1f1db08156a965762b701691f5fe3\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "5fe41622-7e88-4c65-aa9c-b66a6dd2178b"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.052233"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Another User\",\n            \"images\": {\n                \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/small/961-200.png?1549368517\",\n                \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/medium/961-200.png?1549368517\",\n                \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/large/961-200.png?1549368517\",\n                \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/original/961-200.png?1549368517\"\n            },\n            \"first_name\": \"Another\",\n            \"last_name\": \"User\",\n            \"date_of_birth\": 1464083530,\n            \"email\": \"michael+2@showoff.ie\",\n            \"active\": true\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Show (Me)",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{api_url}}/api/v1/users/me",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"me"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Show (Me)",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{api_url}}/api/v1/users/me",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"me"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:09:05 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"c249aa33c8ea1264396a86f0b761e070\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "a4b075dd-6aaa-4977-908e-70bcfb8ccb6a"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.026051"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Another User\",\n            \"images\": {\n                \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/small/961-200.png?1549368535\",\n                \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/medium/961-200.png?1549368535\",\n                \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/large/961-200.png?1549368535\",\n                \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/original/961-200.png?1549368535\"\n            },\n            \"first_name\": \"Another\",\n            \"last_name\": \"User\",\n            \"date_of_birth\": 1464083530,\n            \"email\": \"michael+2@showoff.ie\",\n            \"active\": true\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Show (ID)",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{token}}"
-							}
-						],
-						"url": {
-							"raw": "{{api_url}}/api/v1/users/1",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"1"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Show (ID)",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{token}}"
-									}
-								],
-								"url": {
-									"raw": "{{api_url}}/api/v1/users/1",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:09:27 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"17bf7bf8c77799a4d1aecdc72e40cf17\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "8732e8dd-fc28-47c8-b23d-e1a630c2c67e"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.062655"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"A User\",\n            \"images\": {\n                \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/small/961-200.png?1549366177\",\n                \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/medium/961-200.png?1549366177\",\n                \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/large/961-200.png?1549366177\",\n                \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/original/961-200.png?1549366177\"\n            },\n            \"first_name\": \"A\",\n            \"last_name\": \"User\"\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Change Password",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "8354a810-d219-4b93-b8f7-1850b9f9a8cd",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"token\", jsonData.data.token.access_token);",
-									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.data.token.refresh_token);",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n   \"user\" : {\n       \"current_password\" : \"password\",\n       \"new_password\" : \"password\"\n   }\n}"
-						},
-						"url": {
-							"raw": "{{api_url}}/api/v1/users/me/password",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"me",
-								"password"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Change Password",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n   \"user\" : {\n       \"current_password\" : \"password\",\n       \"new_password\" : \"password\"\n   }\n}"
-								},
-								"url": {
-									"raw": "{{api_url}}/api/v1/users/me/password",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"me",
-										"password"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:09:38 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"4c5a9d5df539fc23fa85281dfed6bb3e\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "1ff76dfd-aefe-45cc-9a17-e053280f6f71"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.606342"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"token\": {\n            \"access_token\": \"b530f9ad13a061b36aa342b255608e18960db09cfd977cab8c1de9a0f8226024\",\n            \"token_type\": \"Bearer\",\n            \"expires_in\": 2592000,\n            \"refresh_token\": \"d0362021d448c41d4db4037f5f17bca047b02542d061dae3851a4ea7d25645f2\",\n            \"scope\": \"basic\",\n            \"created_at\": 1549368579\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Check email",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{api_url}}/api/v1/users/email?email=test@showoff.ie&client_id={{client_id}}&client_secret={{client_secret}}",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"email"
-							],
-							"query": [
-								{
-									"key": "email",
-									"value": "test@showoff.ie"
-								},
-								{
-									"key": "client_id",
-									"value": "{{client_id}}"
-								},
-								{
-									"key": "client_secret",
-									"value": "{{client_secret}}"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Check email",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{api_url}}/api/v1/users/email?email=test@showoff.ie&client_id={{client_id}}&client_secret={{client_secret}}",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"email"
-									],
-									"query": [
-										{
-											"key": "email",
-											"value": "test@showoff.ie"
-										},
-										{
-											"key": "client_id",
-											"value": "{{client_id}}"
-										},
-										{
-											"key": "client_secret",
-											"value": "{{client_secret}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:09:51 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"9b0fc99aa67e9b070d999111267d355a\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "9535c53f-def1-464a-b09a-a9373f8520d1"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.024262"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"available\": true\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Reset Password",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n   \"user\" : {\n       \"email\" : \"michael@showoff.ie\"\n   },\n   \"client_id\": \"{{client_id}}\",\n   \"client_secret\": \"{{client_secret}}\"\n}"
-						},
-						"url": {
-							"raw": "{{api_url}}/api/v1/users/reset_password",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"reset_password"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Reset Password",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n   \"user\" : {\n       \"email\" : \"michael@showoff.ie\"\n   },\n   \"client_id\": \"{{client_id}}\",\n   \"client_secret\": \"{{client_secret}}\"\n}"
-								},
-								"url": {
-									"raw": "{{api_url}}/api/v1/users/reset_password",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"reset_password"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:10:00 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"efcb4bc2a9888669f1d9768a291c99b8\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "0eaf1882-dc41-4252-9801-989d3f45bfa5"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.094973"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Password reset email sent to michael@showoff.ie. Please check your email address for further instructions.\",\n    \"data\": null\n}"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Authentication",
-			"item": [
 				{
 					"name": "Data_Driven_Token_Create",
 					"item": [
 						{
-							"name": "Create",
+							"name": "Create_Token",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"id": "cb92defa-e610-4e08-9a92-a5764a31ae67",
 										"exec": [
+											"if(pm.iterationData.get(\"test_tag\")!=\"missing_field_value\"){",
 											"let jsonData = JSON.parse(responseBody);",
 											"let jsonSchema_success=JSON.parse(pm.environment.get(\"json_schema_success_token_creation\"));",
 											"let jsonSchem_failed=JSON.parse(pm.environment.get(\"json_schema_failed\"));",
-											"let status='';",
-											"",
-											"if(pm.response.code==200){",
-											"",
-											"postman.setEnvironmentVariable(\"token\", jsonData.data.token.access_token);",
-											"postman.setEnvironmentVariable(\"refresh_token\", jsonData.data.token.refresh_token);",
-											"",
-											"}",
+											"let status;",
 											"",
 											"if((pm.iterationData.get(\"message\")).includes('Success')){",
 											"",
@@ -1746,6 +335,32 @@
 											"    pm.expect(jsonData.message).to.eql(pm.iterationData.get('message'));",
 											"});",
 											"    ",
+											"}else{",
+											"",
+											"pm.test(\"Status code is 400 for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"    ",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "91443557-6165-4a61-b31d-13616acaf9d3",
+										"exec": [
+											"const uuid = require('uuid');",
+											"",
+											"if(pm.iterationData.get(\"test_tag\")==='random_email'){",
+											"    let email=uuid()+'@domain.com';",
+											"    pm.variables.set(\"user_email\",'\"'+email+'\"');",
+											"}else",
+											"{",
+											"    pm.variables.set(\"user_email\",pm.iterationData.get(\"user_email\"));",
+											"}",
+											"",
 											""
 										],
 										"type": "text/javascript"
@@ -1764,7 +379,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"grant_type\": \"{{type}}\",\n    \"client_id\": \"{{client_id}}\",\n    \"client_secret\": \"{{client_secret}}\",\n    \"username\": \"{{user_email}}\",\n    \"password\": \"{{password}}\"\n}",
+									"raw": "{\n    \"grant_type\": {{type}},\n    \"client_id\": {{client_id}},\n    \"client_secret\": {{client_secret}},\n    \"username\": {{user_email}},\n    \"password\": {{password}}\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1883,198 +498,57 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Revoke",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"token\":\"{{token}}\"\n}"
-						},
-						"url": {
-							"raw": "{{api_url}}/oauth/revoke",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"oauth",
-								"revoke"
-							]
-						}
-					},
-					"response": [
+					"name": "Data_Driven_User_Update",
+					"item": [
 						{
-							"name": "Revoke",
-							"originalRequest": {
+							"name": "Create_Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cb92defa-e610-4e08-9a92-a5764a31ae67",
+										"exec": [
+											"let jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"token\", jsonData.data.token.access_token);",
+											"postman.setEnvironmentVariable(\"body_token\",'\"'+jsonData.data.token.access_token+'\"');",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "91443557-6165-4a61-b31d-13616acaf9d3",
+										"exec": [
+											"if(pm.iterationData.get(\"test_tag\")===\"revoke_token\"){",
+											"    postman.setNextRequest(\"Revoke_Token\");",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
 										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{token}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"token\":\"{{token}}\"\n}"
-								},
-								"url": {
-									"raw": "{{api_url}}/oauth/revoke",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"oauth",
-										"revoke"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:05:57 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"6df603a030b2ec26d9bd948df02ba753\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "2dbfdbbc-ca6d-4421-80a7-ede5a4fc2451"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.050926"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"message\": \"Token Successfully Revoked\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Refresh",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "cb92defa-e610-4e08-9a92-a5764a31ae67",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"token\", jsonData.data.token.access_token);",
-									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.data.token.refresh_token);",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"grant_type\": \"refresh_token\",\n    \"refresh_token\": \"{{refresh_token}}\",\n    \"client_id\": \"{{client_id}}\",\n    \"client_secret\": \"{{client_secret}}\"\n}"
-						},
-						"url": {
-							"raw": "{{api_url}}/oauth/token",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"oauth",
-								"token"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Refresh",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{token}}",
-										"type": "text"
+									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": \"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe\",\r\n    \"client_secret\": \"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352\",\r\n    \"username\": \"testunique@gmail.com\",\r\n    \"password\": \"Test123!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
 									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"grant_type\": \"refresh_token\",\n    \"refresh_token\": \"{{refresh_token}}\",\n    \"client_id\": \"{{client_id}}\",\n    \"client_secret\": \"{{client_secret}}\"\n}"
 								},
 								"url": {
 									"raw": "{{api_url}}/oauth/token",
@@ -2087,95 +561,400 @@
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:06:23 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"092f565ee0ca96b9e73917d6b79a22b2\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "32fd3955-77c4-4fe4-8200-1423c17d5887"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.097618"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
+									"name": "Create",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"grant_type\": \"password\",\n    \"client_id\": \"{{client_id}}\",\n    \"client_secret\": \"{{client_secret}}\",\n    \"username\": \"michael@showoff.ie\",\n    \"password\": \"password\"\n}"
+										},
+										"url": {
+											"raw": "{{api_url}}/oauth/token",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"oauth",
+												"token"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Feb 2019 12:05:26 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding, Origin"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Etag",
+											"value": "W/\"60aecbb054f7f34d36fb73371b5d337f\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "582dd38e-6672-4cb9-9b3e-a71286b0ae0e"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.265595"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"token\": {\n            \"access_token\": \"479c8407d69e5bbc5079936e13314b50971d7028a11994a3be83c8f89027835f\",\n            \"token_type\": \"Bearer\",\n            \"expires_in\": 2592000,\n            \"refresh_token\": \"6399bbcf509079f7565a30d06de245e5414e554d74328181f7fe4313bb256c29\",\n            \"scope\": \"basic\",\n            \"created_at\": 1549368326\n        }\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"token\": {\n            \"access_token\": \"59f4e185205848fe4666fdc040d2529b9548d70e1c576b7d6eb14d25107d8b61\",\n            \"token_type\": \"Bearer\",\n            \"expires_in\": 2592000,\n            \"refresh_token\": \"d269bf6240129ffc1f300c3d71ee15e317013b48b66bf521fedf19affc5f9a9f\",\n            \"scope\": \"basic\",\n            \"created_at\": 1549368383\n        }\n    }\n}"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Widgets",
-			"item": [
-				{
-					"name": "Visible",
-					"item": [
+							]
+						},
 						{
-							"name": "Index",
+							"name": "Update",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
-										"id": "3af17690-4611-4bc1-b64f-6f2244a6fe93",
+										"id": "6e893f38-706d-4bb4-a7b4-6466e4ad6ddd",
 										"exec": [
-											"var jsonData = JSON.parse(responseBody);",
-											"postman.setEnvironmentVariable(\"widget_id\", jsonData.data.widgets[0].id);",
+											"if(pm.iterationData.get(\"test_tag\")!=\"missing_field_value\"){",
+											"let jsonData = JSON.parse(responseBody);",
+											"let jsonSchema_success=JSON.parse(pm.environment.get(\"json_schema_success_user_update\"));",
+											"let jsonSchem_failed=JSON.parse(pm.environment.get(\"json_schema_failed\"));",
+											"let status;",
+											"",
+											"if((pm.iterationData.get(\"message_user_update\")).includes('Success')){",
+											"",
+											"",
+											"pm.test(\"Schema is valid  for \"+pm.iterationData.get('test_name'), function() {",
+											"  status=tv4.validate(jsonData,jsonSchema_success, true, true);",
+											"",
+											"  if(!status){",
+											"      console.log(\"Schema error message is:\"+tv4.error.message+\" Error dataPath is:\"+tv4.error.dataPath+\" Error schemaPath is:\"+tv4.error.schemaPath);",
+											"  }",
+											"",
+											"  pm.expect(status).to.be.true;",
+											"});    ",
+											"",
+											"}else{",
+											"",
+											"pm.test(\"Schema is valid  for \"+pm.iterationData.get('test_name'), function() {",
+											"  status=tv4.validate(jsonData,jsonSchem_failed, true, true);",
+											"",
+											"  if(!status){",
+											"      console.log(\"Schema error message is:\"+tv4.error.message+\" Error dataPath is:\"+tv4.error.dataPath+\" Error schemaPath is:\"+tv4.error.schemaPath);",
+											"  }",
+											"",
+											"  pm.expect(status).to.be.true;",
+											"});    ",
+											"        ",
+											"}",
+											"pm.test(\"Check the message for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.expect(jsonData.message).to.eql(pm.iterationData.get('message_user_update'));",
+											"});",
+											"}",
+											"",
+											"pm.test(\"Status code is \"+pm.iterationData.get('status_code_user_update')+\" for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.response.to.have.status(pm.iterationData.get('status_code_user_update'));",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b9f5638c-1463-4cdb-a4f2-ad93130640fd",
+										"exec": [
+											"if(pm.iterationData.get(\"test_tag\")==='invalid_token'){",
+											"    pm.variables.set(\"token\",pm.iterationData.get(\"token\"));",
+											"    ",
+											"}else{",
+											"    pm.variables.set(\"token\",pm.environment.get(\"token\"));",
+											"    ",
+											"}",
 											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"user\": {\r\n    \"first_name\": {{user_firstname}},\r\n    \"last_name\": {{user_lastname}},\r\n    \"date_of_birth\": {{user_dob}},\r\n    \"image_url\": {{image_url}}\r\n  }\r\n}"
+								},
+								"url": {
+									"raw": "{{api_url}}/api/v1/users/me?=",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"me"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user\":{\n        \"first_name\" : \"Another\",\n        \"last_name\" : \"User\",\n        \"date_of_birth\" : 1464083530,\n        \"image_url\": \"https://static.thenounproject.com/png/961-200.png\"\n    }\n}"
+										},
+										"url": {
+											"raw": "{{api_url}}/api/v1/users/me?=",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users",
+												"me"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Feb 2019 12:08:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding, Origin"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Etag",
+											"value": "W/\"4cf1f1db08156a965762b701691f5fe3\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "5fe41622-7e88-4c65-aa9c-b66a6dd2178b"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.052233"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Another User\",\n            \"images\": {\n                \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/small/961-200.png?1549368517\",\n                \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/medium/961-200.png?1549368517\",\n                \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/large/961-200.png?1549368517\",\n                \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/original/961-200.png?1549368517\"\n            },\n            \"first_name\": \"Another\",\n            \"last_name\": \"User\",\n            \"date_of_birth\": 1464083530,\n            \"email\": \"michael+2@showoff.ie\",\n            \"active\": true\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Show (Me)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "bf49f9d0-e6df-49eb-a4e9-874a182b2ab6",
+										"exec": [
+											"postman.setNextRequest(null);"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "550fac67-905d-436d-a2e1-9dca11688315",
+										"exec": [
+											"let jsonData = JSON.parse(responseBody);",
+											"let jsonSchema_success=JSON.parse(pm.environment.get(\"json_schema_success_user_update\"));",
+											"let jsonSchem_failed=JSON.parse(pm.environment.get(\"json_schema_failed\"));",
+											"",
+											"if(pm.iterationData.get(\"test_tag\")!=\"invalid_token\"){",
+											"",
+											"pm.test(\"Schema is valid  for \"+pm.iterationData.get('test_name'), function() {",
+											"  status=tv4.validate(jsonData,jsonSchema_success, true, true);",
+											"",
+											"  if(!status){",
+											"      console.log(\"Schema error message is:\"+tv4.error.message+\" Error dataPath is:\"+tv4.error.dataPath+\" Error schemaPath is:\"+tv4.error.schemaPath);",
+											"  }",
+											"",
+											"  pm.expect(status).to.be.true;",
+											"});    ",
+											"",
+											"",
+											"",
+											"pm.test(\"Status code is 200 for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"}else{",
+											"    ",
+											"    pm.test(\"Schema is valid  for \"+pm.iterationData.get('test_name'), function() {",
+											"  status=tv4.validate(jsonData,jsonSchem_failed, true, true);",
+											"",
+											"  if(!status){",
+											"      console.log(\"Schema error message is:\"+tv4.error.message+\" Error dataPath is:\"+tv4.error.dataPath+\" Error schemaPath is:\"+tv4.error.schemaPath);",
+											"  }",
+											"",
+											"  pm.expect(status).to.be.true;",
+											"});   ",
+											"    ",
+											"pm.test(\"Status code is 401 for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"",
+											"    ",
+											"}",
+											"",
+											"var tmpStr  = pm.iterationData.get('user_firstname').match(/\"(.*)\"/);",
+											"console.log(tmpStr[1]);",
+											"",
+											"",
+											"if((pm.iterationData.get(\"message_user_update\")).includes('Success')){",
+											"    ",
+											"    ",
+											"pm.test(\"Validate that the updated information is reflected for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.expect(jsonData.data.user.name).to.eql((pm.iterationData.get(\"user_firstname\").match(/\"(.*)\"/))[1]+\" \"+(pm.iterationData.get(\"user_lastname\").match(/\"(.*)\"/))[1]);",
+											"    pm.expect(jsonData.data.user.first_name).to.eql((pm.iterationData.get(\"user_firstname\").match(/\"(.*)\"/))[1]);",
+											"    pm.expect(jsonData.data.user.last_name).to.eql((pm.iterationData.get(\"user_lastname\").match(/\"(.*)\"/))[1]);",
+											"     pm.expect(jsonData.data.user.date_of_birth.toString()).to.eql((pm.iterationData.get(\"user_dob\").match(/\"(.*)\"/))[1]);",
+											"     pm.expect(jsonData.data.user.email).to.eql(\"testunique@gmail.com\");",
+											"});",
+											"",
+											"",
+											"}else{",
+											"",
+											"}"
 										],
 										"type": "text/javascript"
 									}
@@ -2191,31 +970,21 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_url}}/api/v1/widgets/visible?client_id={{client_id}}&client_secret={{client_secret}}",
+									"raw": "{{api_url}}/api/v1/users/me",
 									"host": [
 										"{{api_url}}"
 									],
 									"path": [
 										"api",
 										"v1",
-										"widgets",
-										"visible"
-									],
-									"query": [
-										{
-											"key": "client_id",
-											"value": "{{client_id}}"
-										},
-										{
-											"key": "client_secret",
-											"value": "{{client_secret}}"
-										}
+										"users",
+										"me"
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "Index",
+									"name": "Show (Me)",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -2226,25 +995,15 @@
 											}
 										],
 										"url": {
-											"raw": "{{api_url}}/api/v1/widgets/visible?client_id={{client_id}}&client_secret={{client_secret}}",
+											"raw": "{{api_url}}/api/v1/users/me",
 											"host": [
 												"{{api_url}}"
 											],
 											"path": [
 												"api",
 												"v1",
-												"widgets",
-												"visible"
-											],
-											"query": [
-												{
-													"key": "client_id",
-													"value": "{{client_id}}"
-												},
-												{
-													"key": "client_secret",
-													"value": "{{client_secret}}"
-												}
+												"users",
+												"me"
 											]
 										}
 									},
@@ -2258,7 +1017,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 05 Feb 2019 12:10:11 GMT"
+											"value": "Tue, 05 Feb 2019 12:09:05 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2290,7 +1049,7 @@
 										},
 										{
 											"key": "Etag",
-											"value": "W/\"f6817bf8b53c446d37783a3225b11d2d\""
+											"value": "W/\"c249aa33c8ea1264396a86f0b761e070\""
 										},
 										{
 											"key": "Cache-Control",
@@ -2298,11 +1057,11 @@
 										},
 										{
 											"key": "X-Request-Id",
-											"value": "71ddff6d-076b-4691-8752-0eee822c0869"
+											"value": "a4b075dd-6aaa-4977-908e-70bcfb8ccb6a"
 										},
 										{
 											"key": "X-Runtime",
-											"value": "0.080173"
+											"value": "0.026051"
 										},
 										{
 											"key": "Transfer-Encoding",
@@ -2314,20 +1073,82 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widgets\": [\n            {\n                \"id\": 4,\n                \"name\": \"A Visible Widget\",\n                \"description\": \"Widget 1\",\n                \"kind\": \"visible\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"A User\",\n                    \"images\": {\n                        \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/small/961-200.png?1549366177\",\n                        \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/medium/961-200.png?1549366177\",\n                        \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/large/961-200.png?1549366177\",\n                        \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/original/961-200.png?1549366177\"\n                    },\n                    \"first_name\": \"A\",\n                    \"last_name\": \"User\"\n                },\n                \"owner\": false\n            }\n        ]\n    }\n}"
+									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Another User\",\n            \"images\": {\n                \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/small/961-200.png?1549368535\",\n                \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/medium/961-200.png?1549368535\",\n                \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/large/961-200.png?1549368535\",\n                \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/original/961-200.png?1549368535\"\n            },\n            \"first_name\": \"Another\",\n            \"last_name\": \"User\",\n            \"date_of_birth\": 1464083530,\n            \"email\": \"michael+2@showoff.ie\",\n            \"active\": true\n        }\n    }\n}"
 								}
 							]
 						},
 						{
-							"name": "Index w/Term",
+							"name": "Revoke_Token",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
-										"id": "6836a998-818c-4784-8cb9-5e60ecf31d02",
+										"id": "2b33c944-42d5-42f6-95b1-0dada3ca7a22",
 										"exec": [
-											"var jsonData = JSON.parse(responseBody);",
-											"postman.setEnvironmentVariable(\"widget_id\", jsonData.data.widgets[0].id);",
+											"if(pm.iterationData.get(\"test_tag\")!=\"missing_field_value\"){",
+											"let jsonData = JSON.parse(responseBody);",
+											"let jsonSchema_success=JSON.parse(pm.environment.get(\"json_schema_revoke_token_success\"));",
+											"let jsonSchem_failed=JSON.parse(pm.environment.get(\"json_schema_failed\"));",
+											"let status;",
+											"",
+											"if((pm.iterationData.get(\"message_token_revoke\")).includes('Success')){",
+											"",
+											"",
+											"pm.test(\"Schema is valid  for \"+pm.iterationData.get('test_name'), function() {",
+											"  status=tv4.validate(jsonData,jsonSchema_success, true, true);",
+											"",
+											"  if(!status){",
+											"      console.log(\"Schema error message is:\"+tv4.error.message+\" Error dataPath is:\"+tv4.error.dataPath+\" Error schemaPath is:\"+tv4.error.schemaPath);",
+											"  }",
+											"",
+											"  pm.expect(status).to.be.true;",
+											"});    ",
+											"",
+											"}else{",
+											"",
+											"pm.test(\"Schema is valid  for \"+pm.iterationData.get('test_name'), function() {",
+											"  status=tv4.validate(jsonData,jsonSchem_failed, true, true);",
+											"",
+											"  if(!status){",
+											"      console.log(\"Schema error message is:\"+tv4.error.message+\" Error dataPath is:\"+tv4.error.dataPath+\" Error schemaPath is:\"+tv4.error.schemaPath);",
+											"  }",
+											"",
+											"  pm.expect(status).to.be.true;",
+											"});    ",
+											"        ",
+											"}",
+											"pm.test(\"Check the message for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.expect(jsonData.message).to.eql(pm.iterationData.get('message_token_revoke'));",
+											"});",
+											"}",
+											"",
+											"pm.test(\"Status code is \"+pm.iterationData.get('status_code_token_revoke')+\" for \"+pm.iterationData.get('test_name'), function () {",
+											"    pm.response.to.have.status(pm.iterationData.get('status_code_token_revoke'));",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "0544251e-ee19-47d8-be9c-23f032f49d98",
+										"exec": [
+											"if(pm.iterationData.get(\"token\")==='NA'){",
+											"    pm.variables.set(\"token\",pm.environment.get(\"token\"));",
+											"    ",
+											"}",
+											"else{",
+											"     pm.variables.set(\"token\",pm.iterationData.get(\"token\"));",
+											"}",
+											"",
+											"if(pm.iterationData.get(\"body_token\")==='NA'){",
+											"    pm.variables.set(\"body_token\",pm.environment.get(\"body_token\"));",
+											"}",
+											"else{",
+											"     pm.variables.set(\"body_token\",pm.iterationData.get(\"body_token\"));",
+											"}",
+											"   ",
 											""
 										],
 										"type": "text/javascript"
@@ -2335,65 +1156,59 @@
 								}
 							],
 							"request": {
-								"method": "GET",
-								"header": [],
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"token\":{{body_token}}\r\n}"
+								},
 								"url": {
-									"raw": "{{api_url}}/api/v1/widgets/visible?client_id={{client_id}}&client_secret={{client_secret}}&term=a",
+									"raw": "{{api_url}}/oauth/revoke",
 									"host": [
 										"{{api_url}}"
 									],
 									"path": [
-										"api",
-										"v1",
-										"widgets",
-										"visible"
-									],
-									"query": [
-										{
-											"key": "client_id",
-											"value": "{{client_id}}"
-										},
-										{
-											"key": "client_secret",
-											"value": "{{client_secret}}"
-										},
-										{
-											"key": "term",
-											"value": "a"
-										}
+										"oauth",
+										"revoke"
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "Index w/Term",
+									"name": "Revoke",
 									"originalRequest": {
-										"method": "GET",
-										"header": [],
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"token\":\"{{token}}\"\n}"
+										},
 										"url": {
-											"raw": "{{api_url}}/api/v1/widgets/visible?client_id={{client_id}}&client_secret={{client_secret}}&term=a",
+											"raw": "{{api_url}}/oauth/revoke",
 											"host": [
 												"{{api_url}}"
 											],
 											"path": [
-												"api",
-												"v1",
-												"widgets",
-												"visible"
-											],
-											"query": [
-												{
-													"key": "client_id",
-													"value": "{{client_id}}"
-												},
-												{
-													"key": "client_secret",
-													"value": "{{client_secret}}"
-												},
-												{
-													"key": "term",
-													"value": "a"
-												}
+												"oauth",
+												"revoke"
 											]
 										}
 									},
@@ -2407,7 +1222,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 05 Feb 2019 12:10:28 GMT"
+											"value": "Tue, 05 Feb 2019 12:05:57 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2439,7 +1254,7 @@
 										},
 										{
 											"key": "Etag",
-											"value": "W/\"8dfd881da79cea4e4e12ae67e5b44b55\""
+											"value": "W/\"6df603a030b2ec26d9bd948df02ba753\""
 										},
 										{
 											"key": "Cache-Control",
@@ -2447,11 +1262,11 @@
 										},
 										{
 											"key": "X-Request-Id",
-											"value": "1b9afe74-7780-4bfd-94e1-eec079b44880"
+											"value": "2dbfdbbc-ca6d-4421-80a7-ede5a4fc2451"
 										},
 										{
 											"key": "X-Runtime",
-											"value": "0.023615"
+											"value": "0.050926"
 										},
 										{
 											"key": "Transfer-Encoding",
@@ -2463,739 +1278,17 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widgets\": [\n            {\n                \"id\": 4,\n                \"name\": \"A Visible Widget\",\n                \"description\": \"Widget 1\",\n                \"kind\": \"visible\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"A User\",\n                    \"images\": {\n                        \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/small/961-200.png?1549366177\",\n                        \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/medium/961-200.png?1549366177\",\n                        \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/large/961-200.png?1549366177\",\n                        \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/original/961-200.png?1549366177\"\n                    },\n                    \"first_name\": \"A\",\n                    \"last_name\": \"User\"\n                },\n                \"owner\": false\n            }\n        ]\n    }\n}"
+									"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"message\": \"Token Successfully Revoked\"\n    }\n}"
 								}
 							]
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Create (Hidden)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1c7fdf24-f1b2-4b8f-86fc-f216c7770640",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"widget_id\", jsonData.data.widget.id);",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"widget\": {\n\t\t\"name\": \"A Hidden Widget\",\n\t\t\"description\": \"Widget 1\",\n\t\t\"kind\": \"hidden\"\n\t}\n}"
-						},
-						"url": {
-							"raw": "{{api_url}}/api/v1/widgets",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"widgets"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Create (Hidden)",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{token}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"widget\": {\n\t\t\"name\": \"A Hidden Widget\",\n\t\t\"description\": \"Widget 1\",\n\t\t\"kind\": \"hidden\"\n\t}\n}"
-								},
-								"url": {
-									"raw": "{{api_url}}/api/v1/widgets",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"widgets"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:10:44 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"a28781f497322e5dccec418724e77370\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "d18acaf8-c1d1-493e-8eff-730b0381a551"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.052858"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widget\": {\n            \"id\": 5,\n            \"name\": \"A Hidden Widget\",\n            \"description\": \"Widget 1\",\n            \"kind\": \"hidden\",\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Another User\",\n                \"images\": {\n                    \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/small/961-200.png?1549368535\",\n                    \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/medium/961-200.png?1549368535\",\n                    \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/large/961-200.png?1549368535\",\n                    \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/original/961-200.png?1549368535\"\n                },\n                \"first_name\": \"Another\",\n                \"last_name\": \"User\",\n                \"date_of_birth\": 1464083530,\n                \"email\": \"michael+2@showoff.ie\",\n                \"active\": true\n            },\n            \"owner\": true\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Create (Visible)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1c7fdf24-f1b2-4b8f-86fc-f216c7770640",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"widget_id\", jsonData.data.widget.id);",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{token}}"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"widget\": {\n\t\t\"name\": \"A Visible Widget\",\n\t\t\"description\": \"Widget 1\",\n\t\t\"kind\": \"visible\"\n\t}\n}"
-						},
-						"url": {
-							"raw": "{{api_url}}/api/v1/widgets",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"widgets"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Create (Visible)",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{token}}"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"widget\": {\n\t\t\"name\": \"A Visible Widget\",\n\t\t\"description\": \"Widget 1\",\n\t\t\"kind\": \"visible\"\n\t}\n}"
-								},
-								"url": {
-									"raw": "{{api_url}}/api/v1/widgets",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"widgets"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:10:53 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"9dd4f4259321acce74d9a9365f39b4ba\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "d04cef5e-771f-40db-9b2b-88a8c712be38"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.060892"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widget\": {\n            \"id\": 6,\n            \"name\": \"A Visible Widget\",\n            \"description\": \"Widget 1\",\n            \"kind\": \"visible\",\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Another User\",\n                \"images\": {\n                    \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/small/961-200.png?1549368535\",\n                    \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/medium/961-200.png?1549368535\",\n                    \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/large/961-200.png?1549368535\",\n                    \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/original/961-200.png?1549368535\"\n                },\n                \"first_name\": \"Another\",\n                \"last_name\": \"User\",\n                \"date_of_birth\": 1464083530,\n                \"email\": \"michael+2@showoff.ie\",\n                \"active\": true\n            },\n            \"owner\": true\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Update",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1c7fdf24-f1b2-4b8f-86fc-f216c7770640",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"widget_id\", jsonData.data.widget.id);",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{token}}"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"widget\": {\n\t\t\"name\": \"An Updated Visible Widget\",\n\t\t\"description\": \"Widget 1\"\n\t}\n}"
-						},
-						"url": {
-							"raw": "{{api_url}}/api/v1/widgets/{{widget_id}}",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"widgets",
-								"{{widget_id}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Update",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{token}}"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"widget\": {\n\t\t\"name\": \"An Updated Visible Widget\",\n\t\t\"description\": \"Widget 1\"\n\t}\n}"
-								},
-								"url": {
-									"raw": "{{api_url}}/api/v1/widgets/{{widget_id}}",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"widgets",
-										"{{widget_id}}"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:11:00 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"6fab5ec23b7960542e06287c31ede015\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "8ab975ac-bb8b-4f3d-8cca-ee06066935c5"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.059136"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widget\": {\n            \"id\": 6,\n            \"name\": \"An Updated Visible Widget\",\n            \"description\": \"Widget 1\",\n            \"kind\": \"visible\",\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Another User\",\n                \"images\": {\n                    \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/small/961-200.png?1549368535\",\n                    \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/medium/961-200.png?1549368535\",\n                    \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/large/961-200.png?1549368535\",\n                    \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/original/961-200.png?1549368535\"\n                },\n                \"first_name\": \"Another\",\n                \"last_name\": \"User\",\n                \"date_of_birth\": 1464083530,\n                \"email\": \"michael+2@showoff.ie\",\n                \"active\": true\n            },\n            \"owner\": true\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Destroy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1c7fdf24-f1b2-4b8f-86fc-f216c7770640",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"widget_id\", jsonData.data.widget.id);",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{token}}"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{api_url}}/api/v1/widgets/{{widget_id}}",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"widgets",
-								"{{widget_id}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Destroy",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{token}}"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{api_url}}/api/v1/widgets/{{widget_id}}",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"widgets",
-										"{{widget_id}}"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:11:11 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"1f95e75dea2bdf374cd05320ac65af7f\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "f6e19f8a-f23e-4c3b-a7ea-e4f49e006ee1"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.092076"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widget\": null\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Index",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{api_url}}/api/v1/widgets",
-							"host": [
-								"{{api_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"widgets"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Index",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{api_url}}/api/v1/widgets",
-									"host": [
-										"{{api_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"widgets"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "Cowboy"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 05 Feb 2019 12:11:52 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding, Origin"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Etag",
-									"value": "W/\"63dae242d664465c703e0aa0e849ba9d\""
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, private, must-revalidate"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "8c60d1da-afe1-437b-bfe1-5c5b3c6921ff"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.049501"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 vegur"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"widgets\": [\n            {\n                \"id\": 5,\n                \"name\": \"A Hidden Widget\",\n                \"description\": \"Widget 1\",\n                \"kind\": \"hidden\",\n                \"user\": {\n                    \"id\": 3,\n                    \"name\": \"Another User\",\n                    \"images\": {\n                        \"small_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/small/961-200.png?1549368535\",\n                        \"medium_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/medium/961-200.png?1549368535\",\n                        \"large_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/large/961-200.png?1549368535\",\n                        \"original_url\": \"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/003/original/961-200.png?1549368535\"\n                    },\n                    \"first_name\": \"Another\",\n                    \"last_name\": \"User\",\n                    \"date_of_birth\": 1464083530,\n                    \"email\": \"michael+2@showoff.ie\",\n                    \"active\": true\n                },\n                \"owner\": true\n            }\n        ]\n    }\n}"
-						}
-					]
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
