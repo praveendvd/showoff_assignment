@@ -40,7 +40,7 @@ Test run summary report consititing of test results and observations
  
  The output report will be availabel under newman directory in the current folder
  
- the test result for the endpoints,  user update , token_revoke and check user details, will be avaiable as a single file "user_update+token_rvk+showme.html". 
+ the test result for the endpoints,  user update , token_revoke and check user details, will be avaiable as a single file **"user_update+token_rvk+showme.html"**.
  
 
 
