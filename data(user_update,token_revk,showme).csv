@@ -1,9 +1,11 @@
-test_name,test_tag,user_firstname,user_lastname,user_dob,image_url,token,body_token,status_code_user_update,message_user_update,status_code_token_revoke,message_token_revoke
-valid_details,valid_token,"\"firstname\"","\"lastname\"","\"12052019\"","\"https://www.google.com\"",NA,NA,200,Success,,
-invalid_token,invalid_token,"\"test\"","\"test\"","\"12052019\"","\"https://www.google.com\"",NA,NA,401,Your session has expired. Please login again to continue.,,
-revoke_token,revoke_token,"\"test\"","\"test\"","\"12052019\"","\"https://www.google.com\"",NA,NA,401,Your session has expired. Please login again to continue.,200,Success
-invalid_token,revoke_token,"\"test\"","\"test\"","\"12052019\"","\"https://www.google.com\"","\"testing 4\"",NA,200,Success,401,Your session has expired. Please login again to continue.
-invalid_body_token,revoke_token,"\"newfirstname\"","\"newlastname\"","\"18052019\"","\"https://www.google.com\"",NA,"\"testing 5\"",200,Success,422,Invalid token
-invalid_date(string),valid_token,"\"test\"","\"test\"","\"tedfsfsdfoohhhhhhhhsttedfsfsdfoohhhhhhhhst\"","\"https://www.google.com\"",NA,NA,422,Invalid date,,
-invalid_date(number),valid_token,"\"test\"","\"test\"","\"12345678911121\"","\"test\"","\"asdsd\"","\"asdsd\"",422,Invalid date,,
-firstname_value_missing,missing_field_value,,"\"lastname\"","\"12052019\"","\"https://www.google.com\"",NA,NA,400,,,
+test_name,test_tag,user_firstname,user_lastname,user_dob,image_url,token,body_token,status_code_user_update,message_user_update,status_code_token_revoke,message_token_revoke,id
+valid_details (1042 endpoint),valid_token,"\"firstname\"","\"lastname\"","\"12052019\"","\"https://www.google.com\"",NA,NA,200,Success,,,1042
+invalid_token,invalid_token,"\"test\"","\"test\"","\"12052019\"","\"https://www.google.com\"",invalid,NA,401,Your session has expired. Please login again to continue.,,,1042
+revoke_token,revoke_token,"\"test\"","\"test\"","\"12052019\"","\"https://www.google.com\"",NA,NA,401,Your session has expired. Please login again to continue.,200,Success,1042
+invalid_token,revoke_token,"\"test\"","\"test\"","\"12052019\"","\"https://www.google.com\"","\"testing 4\"",NA,200,Success,401,Your session has expired. Please login again to continue.,1042
+invalid_body_token,revoke_token,"\"newfirstname\"","\"newlastname\"","\"18052019\"","\"https://www.google.com\"",NA,"\"testing 5\"",200,Success,422,Invalid token,1042
+invalid_date(string),valid_token,"\"test\"","\"test\"","\"tedfsfsdfoohhhhhhhhsttedfsfsdfoohhhhhhhhst\"","\"https://www.google.com\"",NA,NA,422,Invalid date,,,1042
+invalid_date(number),valid_token,"\"test12\"","\"test23\"","\"12345678911121\"","\"test\"","\"asdsd\"","\"asdsd\"",422,Invalid date,,,1042
+firstname_value_missing,missing_field_value,,"\"lastname\"","\"12052019\"","\"https://www.google.com\"",NA,NA,400,,,,1042
+unauthorised_userid_endpoint(valid_details),valid_token,"\"firstname11\"","\"lastname11\"","\"120512019\"","\"https://www.google.com\"",NA,NA,401,Your session has expired. Please login again to continue.,,,11
+valid_details(me? endpoint),valid_token,"\"firstname\"","\"lastname\"","\"12052019\"","\"https://www.google.com\"",NA,NA,200,Success,,,me?=
